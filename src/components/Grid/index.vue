@@ -4,20 +4,20 @@
   </div>
 </template>
 
-<script setup lang="ts" name="Grid">
+<script lang="ts" name="Grid" setup>
 import {
-  ref,
-  watch,
-  useSlots,
   computed,
-  provide,
+  onActivated,
   onBeforeMount,
+  onDeactivated,
   onMounted,
   onUnmounted,
-  onDeactivated,
-  onActivated,
+  provide,
+  ref,
+  useSlots,
+  VNode,
   VNodeArrayChildren,
-  VNode
+  watch
 } from "vue";
 import type { BreakPoint } from "./interface/index";
 
@@ -92,7 +92,7 @@ const gridCols = computed(() => {
 provide("cols", gridCols);
 
 // 寻找需要开始折叠的字段 index
-const slots = useSlots().default!();
+const slots = useSlots().default!("");
 
 const findIndex = () => {
   let fields: VNodeArrayChildren = [];
