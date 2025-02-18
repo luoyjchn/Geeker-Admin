@@ -1,14 +1,15 @@
 // @see: https://cz-git.qbenben.com/zh/guide
-const fs = require("fs");
-const path = require("path");
+import fs from "fs";
+import path from "path";
+import { UserConfig } from "cz-git";
 
 const scopes = fs
   .readdirSync(path.resolve(__dirname, "src"), { withFileTypes: true })
   .filter(dirent => dirent.isDirectory())
   .map(dirent => dirent.name.replace(/s$/, ""));
 
-/** @type {import('cz-git').UserConfig} */
-module.exports = {
+/** @type {import("cz-git").UserConfig} */
+const config: UserConfig = {
   ignores: [commit => commit.includes("init")],
   extends: ["@commitlint/config-conventional"],
   rules: {
@@ -43,27 +44,27 @@ module.exports = {
   },
   prompt: {
     messages: {
-      type: "Select the type of change that you're committing:",
-      scope: "Denote the SCOPE of this change (optional):",
-      customScope: "Denote the SCOPE of this change:",
-      subject: "Write a SHORT, IMPERATIVE tense description of the change:\n",
-      body: 'Provide a LONGER description of the change (optional). Use "|" to break new line:\n',
-      breaking: 'List any BREAKING CHANGES (optional). Use "|" to break new line:\n',
-      footerPrefixsSelect: "Select the ISSUES type of changeList by this change (optional):",
-      customFooterPrefixs: "Input ISSUES prefix:",
-      footer: "List any ISSUES by this change. E.g.: #31, #34:\n",
-      confirmCommit: "Are you sure you want to proceed with the commit above?"
+      // type: "Select the type of change that you're committing:",
+      // scope: "Denote the SCOPE of this change (optional):",
+      // customScope: "Denote the SCOPE of this change:",
+      // subject: "Write a SHORT, IMPERATIVE tense description of the change:\n",
+      // body: 'Provide a LONGER description of the change (optional). Use "|" to break new line:\n',
+      // breaking: 'List any BREAKING CHANGES (optional). Use "|" to break new line:\n',
+      // footerPrefixsSelect: "Select the ISSUES type of changeList by this change (optional):",
+      // customFooterPrefixs: "Input ISSUES prefix:",
+      // footer: "List any ISSUES by this change. E.g.: #31, #34:\n",
+      // confirmCommit: "Are you sure you want to proceed with the commit above?"
       // 中文版
-      // type: "选择你要提交的类型 :",
-      // scope: "选择一个提交范围（可选）:",
-      // customScope: "请输入自定义的提交范围 :",
-      // subject: "填写简短精炼的变更描述 :\n",
-      // body: '填写更加详细的变更描述（可选）。使用 "|" 换行 :\n',
-      // breaking: '列举非兼容性重大的变更（可选）。使用 "|" 换行 :\n',
-      // footerPrefixsSelect: "选择关联issue前缀（可选）:",
-      // customFooterPrefixs: "输入自定义issue前缀 :",
-      // footer: "列举关联issue (可选) 例如: #31, #I3244 :\n",
-      // confirmCommit: "是否提交或修改commit ?"
+      type: "选择你要提交的类型 :",
+      scope: "选择一个提交范围（可选）:",
+      customScope: "请输入自定义的提交范围 :",
+      subject: "填写简短精炼的变更描述 :\n",
+      body: '填写更加详细的变更描述（可选）。使用 "|" 换行 :\n',
+      breaking: '列举非兼容性重大的变更（可选）。使用 "|" 换行 :\n',
+      footerPrefixsSelect: "选择关联issue前缀（可选）:",
+      customFooterPrefixs: "输入自定义issue前缀 :",
+      footer: "列举关联issue (可选) 例如: #31, #I3244 :\n",
+      confirmCommit: "是否提交或修改commit ?"
     },
     types: [
       {
@@ -150,7 +151,7 @@ module.exports = {
       // { value: "chore", name: "其他:   🔨  对构建过程或辅助工具和库的更改（不影响源文件、测试用例）", emoji: "🔨" },
       // { value: "wip", name: "开发:   🕔  正在开发中", emoji: "🕔" },
       // { value: "workflow", name: "工作流:   📋  工作流程改进", emoji: "📋" },
-      // { value: "types", name: "类型:   🔰  类型定义文件修改", emoji: "🔰" }
+      // { value: "type", name: "类型:   🔰  类型定义文件修改", emoji: "🔰" }
     ],
     useEmoji: true,
     scopes: [...scopes],
@@ -160,3 +161,5 @@ module.exports = {
     allowBreakingChanges: ["feat", "fix"]
   }
 };
+
+export default config;
