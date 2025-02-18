@@ -1,14 +1,13 @@
 // @see: https://cz-git.qbenben.com/zh/guide
+import { UserConfig } from "cz-git";
 import fs from "fs";
 import path from "path";
-import { UserConfig } from "cz-git";
 
 const scopes = fs
   .readdirSync(path.resolve(__dirname, "src"), { withFileTypes: true })
   .filter(dirent => dirent.isDirectory())
   .map(dirent => dirent.name.replace(/s$/, ""));
 
-/** @type {import("cz-git").UserConfig} */
 const config: UserConfig = {
   ignores: [commit => commit.includes("init")],
   extends: ["@commitlint/config-conventional"],
@@ -161,5 +160,4 @@ const config: UserConfig = {
     allowBreakingChanges: ["feat", "fix"]
   }
 };
-
 export default config;
