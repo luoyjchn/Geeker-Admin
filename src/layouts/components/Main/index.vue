@@ -3,7 +3,7 @@
   <Tabs v-show="tabs" />
   <el-main>
     <router-view v-slot="{ Component, route }">
-      <transition appear name="fade-transform" mode="out-in">
+      <transition appear mode="out-in" name="fade-transform">
         <keep-alive :include="keepAliveName">
           <component :is="createComponentWrapper(Component, route)" v-if="isRouterShow" :key="route.fullPath" />
         </keep-alive>
@@ -15,8 +15,8 @@
   </el-footer>
 </template>
 
-<script setup lang="ts">
-import { ref, onBeforeUnmount, provide, watch, h } from "vue";
+<script lang="ts" setup>
+import { h, onBeforeUnmount, provide, ref, watch } from "vue";
 import { storeToRefs } from "pinia";
 import { useDebounceFn } from "@vueuse/core";
 import { useGlobalStore } from "@/stores/modules/global";
@@ -83,6 +83,6 @@ onBeforeUnmount(() => {
 });
 </script>
 
-<style scoped lang="scss">
-@import "./index.scss";
+<style lang="scss" scoped>
+@use "./index";
 </style>

@@ -1,11 +1,11 @@
 <template>
   <draggable
     v-model="gridList"
-    class="card grid-container"
-    item-key="id"
     animation="300"
     chosen-class="chosen"
+    class="card grid-container"
     force-fallback="true"
+    item-key="id"
   >
     <template #item="{ element }">
       <div :class="'item' + ' ' + 'item-' + element.num">
@@ -15,7 +15,7 @@
   </draggable>
 </template>
 
-<script setup lang="ts" name="draggable">
+<script lang="ts" name="draggable" setup>
 import { ref } from "vue";
 import draggable from "vuedraggable";
 
@@ -32,6 +32,6 @@ let gridList = ref([
 ]);
 </script>
 
-<style scoped lang="scss">
-@import "./index.scss";
+<style lang="scss" scoped>
+@use "./index";
 </style>

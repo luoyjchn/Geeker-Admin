@@ -1,6 +1,6 @@
 <template>
   <div class="not-container">
-    <img src="@/assets/images/500.png" class="not-img" alt="500" />
+    <img alt="500" class="not-img" src="@/assets/images/500.png" />
     <div class="not-detail">
       <h2>500</h2>
       <h4>抱歉，您的网络不见了~🤦‍♂️🤦‍♀️</h4>
@@ -9,11 +9,12 @@
   </div>
 </template>
 
-<script setup lang="ts" name="500">
+<script lang="ts" name="500" setup>
 import { useRouter } from "vue-router";
+
 const router = useRouter();
 </script>
 
-<style scoped lang="scss">
-@import "./index.scss";
+<style lang="scss" scoped>
+@use "./index";
 </style>

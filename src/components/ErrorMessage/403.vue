@@ -1,6 +1,6 @@
 <template>
   <div class="not-container">
-    <img src="@/assets/images/403.png" class="not-img" alt="403" />
+    <img alt="403" class="not-img" src="@/assets/images/403.png" />
     <div class="not-detail">
       <h2>403</h2>
       <h4>抱歉，您无权访问该页面~🙅‍♂️🙅‍♀️</h4>
@@ -9,11 +9,12 @@
   </div>
 </template>
 
-<script setup lang="ts" name="403">
+<script lang="ts" name="403" setup>
 import { useRouter } from "vue-router";
+
 const router = useRouter();
 </script>
 
-<style scoped lang="scss">
-@import "./index.scss";
+<style lang="scss" scoped>
+@use "./index";
 </style>

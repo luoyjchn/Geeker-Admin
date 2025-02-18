@@ -7,8 +7,8 @@
   </div>
 </template>
 
-<script setup lang="ts" name="github"></script>
+<script lang="ts" name="github" setup></script>
 
-<style scoped lang="scss">
-@import "./index.scss";
+<style lang="scss" scoped>
+@use "./index";
 </style>

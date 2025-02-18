@@ -5,13 +5,14 @@
   </div>
 </template>
 
-<script setup lang="ts" name="throttleDirect">
+<script lang="ts" name="throttleDirect" setup>
 import { ElMessage } from "element-plus";
+
 const throttleClick = () => {
   ElMessage.success("我是节流按钮触发的事件 🍍🍓🍌");
 };
 </script>
 
-<style scoped lang="scss">
-@import "./index.scss";
+<style lang="scss" scoped>
+@use "./index";
 </style>

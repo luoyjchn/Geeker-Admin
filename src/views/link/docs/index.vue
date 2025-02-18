@@ -4,8 +4,8 @@
   </div>
 </template>
 
-<script setup lang="ts" name="docs"></script>
+<script lang="ts" name="docs" setup></script>
 
-<style scoped lang="scss">
-@import "./index.scss";
+<style lang="scss" scoped>
+@use "./index";
 </style>

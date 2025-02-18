@@ -1,6 +1,6 @@
 <template>
   <div class="dataScreen-container">
-    <div class="dataScreen-content" ref="dataScreenRef">
+    <div ref="dataScreenRef" class="dataScreen-content">
       <div class="dataScreen-header">
         <div class="header-lf">
           <span class="header-screening" @click="router.push(HOME_URL)">首页</span>
@@ -21,7 +21,7 @@
           <div class="dataScreen-top">
             <div class="dataScreen-main-title">
               <span>实时游客统计</span>
-              <img src="./images/dataScreen-title.png" alt="" />
+              <img alt="" src="./images/dataScreen-title.png" />
             </div>
             <div class="dataScreen-main-chart">
               <RealTimeAccessChart />
@@ -30,7 +30,7 @@
           <div class="dataScreen-center">
             <div class="dataScreen-main-title">
               <span>男女比例</span>
-              <img src="./images/dataScreen-title.png" alt="" />
+              <img alt="" src="./images/dataScreen-title.png" />
             </div>
             <div class="dataScreen-main-chart">
               <MaleFemaleRatioChart />
@@ -39,7 +39,7 @@
           <div class="dataScreen-bottom">
             <div class="dataScreen-main-title">
               <span>年龄比例</span>
-              <img src="./images/dataScreen-title.png" alt="" />
+              <img alt="" src="./images/dataScreen-title.png" />
             </div>
             <div class="dataScreen-main-chart">
               <AgeRatioChart />
@@ -68,7 +68,7 @@
           <div class="dataScreen-cb">
             <div class="dataScreen-main-title">
               <span>未来30天游客量趋势图</span>
-              <img src="./images/dataScreen-title.png" alt="" />
+              <img alt="" src="./images/dataScreen-title.png" />
             </div>
             <div class="dataScreen-main-chart">
               <OverNext30Chart />
@@ -79,7 +79,7 @@
           <div class="dataScreen-top">
             <div class="dataScreen-main-title">
               <span>热门景区排行</span>
-              <img src="./images/dataScreen-title.png" alt="" />
+              <img alt="" src="./images/dataScreen-title.png" />
             </div>
             <div class="dataScreen-main-chart">
               <HotPlateChart />
@@ -88,7 +88,7 @@
           <div class="dataScreen-center">
             <div class="dataScreen-main-title">
               <span>年度游客量对比</span>
-              <img src="./images/dataScreen-title.png" alt="" />
+              <img alt="" src="./images/dataScreen-title.png" />
             </div>
             <div class="dataScreen-main-chart">
               <AnnualUseChart />
@@ -97,7 +97,7 @@
           <div class="dataScreen-bottom">
             <div class="dataScreen-main-title">
               <span>预约渠道数据统计</span>
-              <img src="./images/dataScreen-title.png" alt="" />
+              <img alt="" src="./images/dataScreen-title.png" />
             </div>
             <div class="dataScreen-main-chart">
               <PlatformSourceChart />
@@ -109,8 +109,8 @@
   </div>
 </template>
 
-<script setup lang="ts" name="dataScreen">
-import { ref, onMounted, onBeforeUnmount } from "vue";
+<script lang="ts" name="dataScreen" setup>
+import { onBeforeUnmount, onMounted, ref } from "vue";
 import { HOME_URL } from "@/config";
 import { useRouter } from "vue-router";
 import AgeRatioChart from "./components/AgeRatioChart.vue";
@@ -162,5 +162,5 @@ onBeforeUnmount(() => {
 });
 </script>
 <style lang="scss" scoped>
-@import "./index.scss";
+@use "./index";
 </style>

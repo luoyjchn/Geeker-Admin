@@ -5,13 +5,14 @@
   </div>
 </template>
 
-<script setup lang="ts" name="longpressDirect">
+<script lang="ts" name="longpressDirect" setup>
 import { ElMessage } from "element-plus";
+
 const longpress = () => {
   ElMessage.success("长按事件触发成功 🎉🎉🎉");
 };
 </script>
 
-<style scoped lang="scss">
-@import "./index.scss";
+<style lang="scss" scoped>
+@use "./index";
 </style>

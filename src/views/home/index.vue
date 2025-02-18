@@ -1,11 +1,11 @@
 <template>
   <div class="home card">
-    <img class="home-bg" src="@/assets/images/welcome.png" alt="welcome" />
+    <img alt="welcome" class="home-bg" src="@/assets/images/welcome.png" />
   </div>
 </template>
 
-<script setup lang="ts" name="home"></script>
+<script lang="ts" name="home" setup></script>
 
-<style scoped lang="scss">
-@import "./index.scss";
+<style lang="scss" scoped>
+@use "./index";
 </style>

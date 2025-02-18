@@ -4,7 +4,7 @@
     <el-header>
       <div class="header-lf mask-image">
         <div class="logo flx-center">
-          <img class="logo-img" src="@/assets/images/logo.svg" alt="logo" />
+          <img alt="logo" class="logo-img" src="@/assets/images/logo.svg" />
           <span class="logo-text">{{ title }}</span>
         </div>
         <ToolBarLeft />
@@ -15,14 +15,14 @@
     </el-header>
     <el-container class="classic-content">
       <el-aside>
-        <div class="aside-box" :style="{ width: isCollapse ? '65px' : '210px' }">
+        <div :style="{ width: isCollapse ? '65px' : '210px' }" class="aside-box">
           <el-scrollbar>
             <el-menu
-              :router="false"
-              :default-active="activeMenu"
               :collapse="isCollapse"
-              :unique-opened="accordion"
               :collapse-transition="false"
+              :default-active="activeMenu"
+              :router="false"
+              :unique-opened="accordion"
             >
               <SubMenu :menu-list="menuList" />
             </el-menu>
@@ -36,7 +36,7 @@
   </el-container>
 </template>
 
-<script setup lang="ts" name="layoutClassic">
+<script lang="ts" name="layoutClassic" setup>
 import { computed } from "vue";
 import { useRoute } from "vue-router";
 import { useAuthStore } from "@/stores/modules/auth";
@@ -57,6 +57,6 @@ const menuList = computed(() => authStore.showMenuListGet);
 const activeMenu = computed(() => (route.meta.activeMenu ? route.meta.activeMenu : route.path) as string);
 </script>
 
-<style scoped lang="scss">
-@import "./index.scss";
+<style lang="scss" scoped>
+@use "./index";
 </style>

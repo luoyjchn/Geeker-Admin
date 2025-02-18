@@ -1,9 +1,9 @@
 <template>
   <div class="card content-box">
     <span class="text">批量添加数据 🍓🍇🍈🍉</span>
-    <el-button type="primary" :icon="Upload" @click="batchAdd"> 批量添加数据 </el-button>
+    <el-button :icon="Upload" type="primary" @click="batchAdd"> 批量添加数据 </el-button>
     <ImportExcel ref="importRef" />
-    <el-descriptions title="配置项（通过 ref 传递） 📚" :column="1" border>
+    <el-descriptions :column="1" border title="配置项（通过 ref 传递） 📚">
       <el-descriptions-item label="title"> 组件显示标题 && 上传成功之后提示信息 </el-descriptions-item>
       <el-descriptions-item label="fileSize"> 上传文件大小，默认为 5M </el-descriptions-item>
       <el-descriptions-item label="fileType">
@@ -17,9 +17,9 @@
   </div>
 </template>
 
-<script setup lang="ts" name="batchImport">
+<script lang="ts" name="batchImport" setup>
 import { ref } from "vue";
-import { exportUserInfo, BatchAddUser } from "@/api/modules/user";
+import { BatchAddUser, exportUserInfo } from "@/api/modules/user";
 import { Upload } from "@element-plus/icons-vue";
 import ImportExcel from "@/components/ImportExcel/index.vue";
 
@@ -34,6 +34,6 @@ const batchAdd = () => {
 };
 </script>
 
-<style scoped lang="scss">
-@import "./index.scss";
+<style lang="scss" scoped>
+@use "./index";
 </style>

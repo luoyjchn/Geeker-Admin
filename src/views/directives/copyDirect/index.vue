@@ -11,12 +11,12 @@
   </div>
 </template>
 
-<script setup lang="ts" name="copyDirect">
+<script lang="ts" name="copyDirect" setup>
 import { ref } from "vue";
 
 const data = ref<string>("我是被复制的内容 🍒 🍉 🍊");
 </script>
 
-<style scoped lang="scss">
-@import "./index.scss";
+<style lang="scss" scoped>
+@use "./index";
 </style>

@@ -3,15 +3,15 @@
   <el-container class="layout">
     <div class="aside-split">
       <div class="logo flx-center">
-        <img class="logo-img" src="@/assets/images/logo.svg" alt="logo" />
+        <img alt="logo" class="logo-img" src="@/assets/images/logo.svg" />
       </div>
       <el-scrollbar>
         <div class="split-list">
           <div
             v-for="item in menuList"
             :key="item.path"
-            class="split-item"
             :class="{ 'split-active': splitActive === item.path || `/${splitActive.split('/')[1]}` === item.path }"
+            class="split-item"
             @click="changeSubMenu(item)"
           >
             <el-icon>
@@ -28,11 +28,11 @@
       </div>
       <el-scrollbar>
         <el-menu
-          :router="false"
-          :default-active="activeMenu"
           :collapse="isCollapse"
-          :unique-opened="accordion"
           :collapse-transition="false"
+          :default-active="activeMenu"
+          :router="false"
+          :unique-opened="accordion"
         >
           <SubMenu :menu-list="subMenuList" />
         </el-menu>
@@ -48,8 +48,8 @@
   </el-container>
 </template>
 
-<script setup lang="ts" name="layoutColumns">
-import { ref, computed, watch } from "vue";
+<script lang="ts" name="layoutColumns" setup>
+import { computed, ref, watch } from "vue";
 import { useRoute, useRouter } from "vue-router";
 import { useAuthStore } from "@/stores/modules/auth";
 import { useGlobalStore } from "@/stores/modules/global";
@@ -98,6 +98,6 @@ const changeSubMenu = (item: Menu.MenuOptions) => {
 };
 </script>
 
-<style scoped lang="scss">
-@import "./index.scss";
+<style lang="scss" scoped>
+@use "./index";
 </style>

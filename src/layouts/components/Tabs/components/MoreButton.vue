@@ -1,5 +1,5 @@
 <template>
-  <el-dropdown trigger="click" :teleported="false">
+  <el-dropdown :teleported="false" trigger="click">
     <div class="more-button">
       <i :class="'iconfont icon-xiala'"></i>
     </div>
@@ -31,7 +31,7 @@
   </el-dropdown>
 </template>
 
-<script setup lang="ts">
+<script lang="ts" setup>
 import { inject, nextTick } from "vue";
 import { HOME_URL } from "@/config";
 import { useTabsStore } from "@/stores/modules/tabs";
@@ -76,6 +76,6 @@ const closeAllTab = () => {
 };
 </script>
 
-<style scoped lang="scss">
-@import "../index.scss";
+<style lang="scss" scoped>
+@use "../index";
 </style>

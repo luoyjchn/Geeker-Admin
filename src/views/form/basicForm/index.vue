@@ -11,7 +11,7 @@
         </el-select>
       </el-form-item>
       <el-form-item label="Activity time :">
-        <el-date-picker v-model="formData.date1" type="date" placeholder="Pick a date" />
+        <el-date-picker v-model="formData.date1" placeholder="Pick a date" type="date" />
         <el-col :span="1" class="text-center">
           <span class="text-gray-500">-</span>
         </el-col>
@@ -22,10 +22,10 @@
       </el-form-item>
       <el-form-item label="Activity type :">
         <el-checkbox-group v-model="formData.type">
-          <el-checkbox value="Online activities" name="type"> Online activities </el-checkbox>
-          <el-checkbox value="Promotion activities" name="type"> Promotion activities </el-checkbox>
-          <el-checkbox value="Offline activities" name="type"> Offline activities </el-checkbox>
-          <el-checkbox value="Simple brand exposure" name="type"> Simple brand exposure </el-checkbox>
+          <el-checkbox name="type" value="Online activities"> Online activities </el-checkbox>
+          <el-checkbox name="type" value="Promotion activities"> Promotion activities </el-checkbox>
+          <el-checkbox name="type" value="Offline activities"> Offline activities </el-checkbox>
+          <el-checkbox name="type" value="Simple brand exposure"> Simple brand exposure </el-checkbox>
         </el-checkbox-group>
       </el-form-item>
       <el-form-item label="Resources :">
@@ -45,7 +45,7 @@
   </div>
 </template>
 
-<script setup lang="ts" name="basicForm">
+<script lang="ts" name="basicForm" setup>
 import { ElMessage } from "element-plus";
 import { reactive } from "vue";
 
@@ -66,6 +66,6 @@ const onSubmit = () => {
 };
 </script>
 
-<style scoped lang="scss">
-@import "./index.scss";
+<style lang="scss" scoped>
+@use "./index";
 </style>

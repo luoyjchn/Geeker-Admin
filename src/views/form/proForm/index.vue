@@ -1,14 +1,14 @@
 <template>
   <div class="card content-box">
     <el-alert
+      :closable="false"
       title="通过 component :is 组件属性 && v-bind 属性透传，可以将 template 中的 html 代码全部改变为 columns 配置项，具体配置请看代码。"
       type="warning"
-      :closable="false"
     />
-    <component :is="'el-form'" v-bind="options.form" ref="proFormRef" :model="model">
+    <component :is="'el-form'" ref="proFormRef" :model="model" v-bind="options.form">
       <template v-for="item in options.columns" :key="item.prop">
         <component :is="'el-form-item'" v-bind="item.formItem">
-          <component :is="`el-${item.attrs.typeName}`" v-bind="item.attrs" v-model="model[item.formItem.prop]" />
+          <component :is="`el-${item.attrs.typeName}`" v-model="model[item.formItem.prop]" v-bind="item.attrs" />
         </component>
       </template>
       <el-form-item>
@@ -18,7 +18,7 @@
   </div>
 </template>
 
-<script setup lang="ts" name="proForm">
+<script lang="ts" name="proForm" setup>
 import { ref } from "vue";
 
 let model = ref<any>({});
@@ -79,6 +79,6 @@ const options = ref({
 });
 </script>
 
-<style scoped lang="scss">
-@import "./index.scss";
+<style lang="scss" scoped>
+@use "./index";
 </style>

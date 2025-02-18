@@ -19,7 +19,7 @@
           <template #tip> 长方形组件（可拖拽上传） </template>
         </UploadImgs>
       </div>
-      <el-descriptions title="配置项 📚（其它参数和单图上传组件相同）" :column="1" border>
+      <el-descriptions :column="1" border title="配置项 📚（其它参数和单图上传组件相同）">
         <el-descriptions-item label="fileList">
           双向绑定的 fileList 值，使用示例： v-model:file-list="fileList"
         </el-descriptions-item>
@@ -54,7 +54,7 @@
           <template #tip> 有图（禁用编辑、删除） </template>
         </UploadImg>
       </div>
-      <el-descriptions title="配置项 📚" :column="1" border>
+      <el-descriptions :column="1" border title="配置项 📚">
         <el-descriptions-item label="imageUrl">
           双向绑定的 imageUrl 值，使用示例： v-model:image-url="avatar"
         </el-descriptions-item>
@@ -77,15 +77,15 @@
     <div class="form-box">
       <div class="card">
         <el-alert
-          title="图片上传组件在 form 表单中使用，上传之后成功会自动重新校验"
-          type="warning"
-          effect="dark"
           :closable="false"
           class="mb20"
+          effect="dark"
+          title="图片上传组件在 form 表单中使用，上传之后成功会自动重新校验"
+          type="warning"
         />
-        <el-form ref="ruleFormRef" label-width="100px" label-suffix=" :" :rules="rules" :model="fromModel">
+        <el-form ref="ruleFormRef" :model="fromModel" :rules="rules" label-suffix=" :" label-width="100px">
           <el-form-item label="用户头像" prop="avatar">
-            <UploadImg v-model:image-url="fromModel.avatar" width="135px" height="135px" :file-size="3">
+            <UploadImg v-model:image-url="fromModel.avatar" :file-size="3" height="135px" width="135px">
               <template #empty>
                 <el-icon><Avatar /></el-icon>
                 <span>请上传头像</span>
@@ -94,7 +94,7 @@
             </UploadImg>
           </el-form-item>
           <el-form-item label="用户照片" prop="photo">
-            <UploadImgs v-model:file-list="fromModel.photo" :limit="3" height="140px" width="140px" border-radius="50%">
+            <UploadImgs v-model:file-list="fromModel.photo" :limit="3" border-radius="50%" height="140px" width="140px">
               <template #empty>
                 <el-icon><Picture /></el-icon>
                 <span>请上传照片</span>
@@ -103,13 +103,13 @@
             </UploadImgs>
           </el-form-item>
           <el-form-item label="用户姓名" prop="username">
-            <el-input v-model="fromModel.username" placeholder="请填写用户姓名" clearable></el-input>
+            <el-input v-model="fromModel.username" clearable placeholder="请填写用户姓名"></el-input>
           </el-form-item>
           <el-form-item label="身份证号" prop="idCard">
-            <el-input v-model="fromModel.idCard" placeholder="请填写身份证号" clearable></el-input>
+            <el-input v-model="fromModel.idCard" clearable placeholder="请填写身份证号"></el-input>
           </el-form-item>
           <el-form-item label="邮箱" prop="email">
-            <el-input v-model="fromModel.email" placeholder="请填写邮箱" clearable></el-input>
+            <el-input v-model="fromModel.email" clearable placeholder="请填写邮箱"></el-input>
           </el-form-item>
           <el-form-item>
             <el-button> 取消 </el-button>
@@ -119,15 +119,15 @@
       </div>
       <div class="card">
         <el-alert
-          title="图片上传组件在 form 表单中使用，如果该表单禁用，则上传组件会自动禁用"
-          type="warning"
-          effect="dark"
           :closable="false"
           class="mb20"
+          effect="dark"
+          title="图片上传组件在 form 表单中使用，如果该表单禁用，则上传组件会自动禁用"
+          type="warning"
         />
-        <el-form label-width="100px" label-suffix=" :" disabled :model="fromModel1">
+        <el-form :model="fromModel1" disabled label-suffix=" :" label-width="100px">
           <el-form-item label="用户头像" prop="avatar">
-            <UploadImg v-model:image-url="fromModel1.avatar" width="135px" height="135px" :file-size="3">
+            <UploadImg v-model:image-url="fromModel1.avatar" :file-size="3" height="135px" width="135px">
               <template #empty>
                 <el-icon><Avatar /></el-icon>
                 <span>请上传头像</span>
@@ -136,7 +136,7 @@
             </UploadImg>
           </el-form-item>
           <el-form-item label="用户照片" prop="photo">
-            <UploadImgs v-model:file-list="fromModel1.photo" height="140px" width="140px" border-radius="50%">
+            <UploadImgs v-model:file-list="fromModel1.photo" border-radius="50%" height="140px" width="140px">
               <template #empty>
                 <el-icon><Picture /></el-icon>
                 <span>请上传照片</span>
@@ -145,13 +145,13 @@
             </UploadImgs>
           </el-form-item>
           <el-form-item label="用户姓名" prop="username">
-            <el-input v-model="fromModel1.username" placeholder="请填写用户姓名" clearable></el-input>
+            <el-input v-model="fromModel1.username" clearable placeholder="请填写用户姓名"></el-input>
           </el-form-item>
           <el-form-item label="身份证号" prop="idCard">
-            <el-input v-model="fromModel1.idCard" placeholder="请填写身份证号" clearable></el-input>
+            <el-input v-model="fromModel1.idCard" clearable placeholder="请填写身份证号"></el-input>
           </el-form-item>
           <el-form-item label="邮箱" prop="email">
-            <el-input v-model="fromModel1.email" placeholder="请填写邮箱" clearable></el-input>
+            <el-input v-model="fromModel1.email" clearable placeholder="请填写邮箱"></el-input>
           </el-form-item>
           <el-form-item>
             <el-button> 取消 </el-button>
@@ -163,8 +163,8 @@
   </div>
 </template>
 
-<script setup lang="ts" name="uploadFile">
-import { ref, reactive } from "vue";
+<script lang="ts" name="uploadFile" setup>
+import { reactive, ref } from "vue";
 import { FormInstance } from "element-plus";
 import UploadImg from "@/components/Upload/Img.vue";
 import UploadImgs from "@/components/Upload/Imgs.vue";
@@ -208,6 +208,6 @@ const submit = () => {
 };
 </script>
 
-<style scoped lang="scss">
-@import "./index.scss";
+<style lang="scss" scoped>
+@use "./index";
 </style>

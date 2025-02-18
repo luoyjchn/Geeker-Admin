@@ -7,48 +7,48 @@
       </el-tabs>
       <div class="top-content">
         <el-row :gutter="40">
-          <el-col class="mb40" :xs="24" :sm="12" :md="12" :lg="6" :xl="6">
+          <el-col :lg="6" :md="12" :sm="12" :xl="6" :xs="24" class="mb40">
             <div class="item-left sle">
               <span class="left-title">访问总数</span>
               <div class="img-box">
-                <img src="./images/book-sum.png" alt="" />
+                <img alt="" src="./images/book-sum.png" />
               </div>
               <span class="left-number">848.132w</span>
             </div>
           </el-col>
-          <el-col class="mb40" :xs="24" :sm="12" :md="12" :lg="8" :xl="8">
+          <el-col :lg="8" :md="12" :sm="12" :xl="8" :xs="24" class="mb40">
             <div class="item-center">
               <div class="gitee-traffic traffic-box">
                 <div class="traffic-img">
-                  <img src="./images/add_person.png" alt="" />
+                  <img alt="" src="./images/add_person.png" />
                 </div>
                 <span class="item-value">2222</span>
                 <span class="traffic-name sle">Gitee 访问量</span>
               </div>
               <div class="gitHub-traffic traffic-box">
                 <div class="traffic-img">
-                  <img src="./images/add_team.png" alt="" />
+                  <img alt="" src="./images/add_team.png" />
                 </div>
                 <span class="item-value">2222</span>
                 <span class="traffic-name sle">GitHub 访问量</span>
               </div>
               <div class="today-traffic traffic-box">
                 <div class="traffic-img">
-                  <img src="./images/today.png" alt="" />
+                  <img alt="" src="./images/today.png" />
                 </div>
                 <span class="item-value">4567</span>
                 <span class="traffic-name sle">今日访问量</span>
               </div>
               <div class="yesterday-traffic traffic-box">
                 <div class="traffic-img">
-                  <img src="./images/book_sum.png" alt="" />
+                  <img alt="" src="./images/book_sum.png" />
                 </div>
                 <span class="item-value">1234</span>
                 <span class="traffic-name sle">昨日访问量</span>
               </div>
             </div>
           </el-col>
-          <el-col class="mb40" :xs="24" :sm="24" :md="24" :lg="10" :xl="10">
+          <el-col :lg="10" :md="24" :sm="24" :xl="10" :xs="24" class="mb40">
             <div class="item-right">
               <div class="echarts-title">Gitee / GitHub 访问量占比</div>
               <div class="book-echarts">
@@ -73,7 +73,7 @@
   </div>
 </template>
 
-<script setup lang="ts" name="dataVisualize">
+<script lang="ts" name="dataVisualize" setup>
 import { ref } from "vue";
 import Pie from "./components/pie.vue";
 import Curve from "./components/curve.vue";
@@ -90,6 +90,6 @@ const tab = [
 ];
 </script>
 
-<style scoped lang="scss">
-@import "./index.scss";
+<style lang="scss" scoped>
+@use "./index";
 </style>

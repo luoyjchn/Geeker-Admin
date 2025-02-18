@@ -4,8 +4,8 @@
   </div>
 </template>
 
-<script setup lang="ts" name="watermarkDirect"></script>
+<script lang="ts" name="watermarkDirect" setup></script>
 
-<style scoped lang="scss">
-@import "./index.scss";
+<style lang="scss" scoped>
+@use "./index";
 </style>

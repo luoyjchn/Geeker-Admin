@@ -15,9 +15,9 @@
       </el-form-item>
       <el-form-item label="Activity time" required>
         <el-form-item prop="date1">
-          <el-date-picker v-model="ruleForm.date1" type="date" placeholder="Pick a date" style="width: 100%" />
+          <el-date-picker v-model="ruleForm.date1" placeholder="Pick a date" style="width: 100%" type="date" />
         </el-form-item>
-        <el-col class="text-center" :span="1">
+        <el-col :span="1" class="text-center">
           <span class="text-gray-500">-</span>
         </el-col>
         <el-form-item prop="date2">
@@ -44,7 +44,7 @@
   </div>
 </template>
 
-<script setup lang="ts" name="dynamicForm">
+<script lang="ts" name="dynamicForm" setup>
 import { reactive, ref } from "vue";
 import { checkPhoneNumber } from "@/utils/eleValidate";
 import type { FormInstance, FormRules } from "element-plus";
@@ -118,6 +118,6 @@ const resetForm = (formEl: FormInstance | undefined) => {
 };
 </script>
 
-<style scoped lang="scss">
-@import "./index.scss";
+<style lang="scss" scoped>
+@use "./index";
 </style>

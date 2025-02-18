@@ -3,10 +3,10 @@
   <el-container class="layout">
     <el-header>
       <div class="logo flx-center">
-        <img class="logo-img" src="@/assets/images/logo.svg" alt="logo" />
+        <img alt="logo" class="logo-img" src="@/assets/images/logo.svg" />
         <span class="logo-text">{{ title }}</span>
       </div>
-      <el-menu mode="horizontal" :router="false" :default-active="activeMenu">
+      <el-menu :default-active="activeMenu" :router="false" mode="horizontal">
         <!-- 不能直接使用 SubMenu 组件，无法触发 el-menu 隐藏省略功能 -->
         <template v-for="subItem in menuList" :key="subItem.path">
           <el-sub-menu v-if="subItem.children?.length" :key="subItem.path" :index="subItem.path + 'el-sub-menu'">
@@ -34,7 +34,7 @@
   </el-container>
 </template>
 
-<script setup lang="ts" name="layoutTransverse">
+<script lang="ts" name="layoutTransverse" setup>
 import { computed } from "vue";
 import { useAuthStore } from "@/stores/modules/auth";
 import { useRoute, useRouter } from "vue-router";
@@ -56,6 +56,6 @@ const handleClickMenu = (subItem: Menu.MenuOptions) => {
 };
 </script>
 
-<style scoped lang="scss">
-@import "./index.scss";
+<style lang="scss" scoped>
+@use "./index";
 </style>

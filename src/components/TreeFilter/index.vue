@@ -4,7 +4,7 @@
       {{ title }}
     </h4>
     <div class="search">
-      <el-input v-model="filterText" placeholder="输入关键字进行过滤" clearable />
+      <el-input v-model="filterText" clearable placeholder="输入关键字进行过滤" />
       <el-dropdown trigger="click">
         <el-icon size="20"><More /></el-icon>
         <template #dropdown>
@@ -18,20 +18,20 @@
     <el-scrollbar :style="{ height: title ? `calc(100% - 95px)` : `calc(100% - 56px)` }">
       <el-tree
         ref="treeRef"
-        default-expand-all
-        :node-key="id"
-        :data="multiple ? treeData : treeAllData"
-        :show-checkbox="multiple"
+        :check-on-click-node="multiple"
         :check-strictly="false"
         :current-node-key="!multiple ? selected : ''"
-        :highlight-current="!multiple"
-        :expand-on-click-node="false"
-        :check-on-click-node="multiple"
-        :props="defaultProps"
-        :filter-node-method="filterNode"
+        :data="multiple ? treeData : treeAllData"
         :default-checked-keys="multiple ? selected : []"
-        @node-click="handleNodeClick"
+        :expand-on-click-node="false"
+        :filter-node-method="filterNode"
+        :highlight-current="!multiple"
+        :node-key="id"
+        :props="defaultProps"
+        :show-checkbox="multiple"
+        default-expand-all
         @check="handleCheckChange"
+        @node-click="handleNodeClick"
       >
         <template #default="scope">
           <span class="el-tree-node__label">
@@ -45,8 +45,8 @@
   </div>
 </template>
 
-<script setup lang="ts" name="TreeFilter">
-import { ref, watch, onBeforeMount, nextTick } from "vue";
+<script lang="ts" name="TreeFilter" setup>
+import { nextTick, onBeforeMount, ref, watch } from "vue";
 import { ElTree } from "element-plus";
 
 // 接收父组件参数并设置默认值
@@ -157,6 +157,6 @@ const handleCheckChange = () => {
 defineExpose({ treeData, treeAllData, treeRef });
 </script>
 
-<style scoped lang="scss">
-@import "./index.scss";
+<style lang="scss" scoped>
+@use "./index";
 </style>

@@ -1,23 +1,23 @@
 <template>
-  <el-dialog v-model="dialogVisible" :title="`批量添加${parameter.title}`" :destroy-on-close="true" width="580px" draggable>
+  <el-dialog v-model="dialogVisible" :destroy-on-close="true" :title="`批量添加${parameter.title}`" draggable width="580px">
     <el-form class="drawer-multiColumn-form" label-width="100px">
       <el-form-item label="模板下载 :">
-        <el-button type="primary" :icon="Download" @click="downloadTemp"> 点击下载 </el-button>
+        <el-button :icon="Download" type="primary" @click="downloadTemp"> 点击下载 </el-button>
       </el-form-item>
       <el-form-item label="文件上传 :">
         <el-upload
-          action="#"
-          class="upload"
+          :accept="parameter.fileType!.join(',')"
+          :before-upload="beforeExcelUpload"
           :drag="true"
+          :http-request="uploadExcel"
           :limit="excelLimit"
           :multiple="true"
-          :show-file-list="true"
-          :http-request="uploadExcel"
-          :before-upload="beforeExcelUpload"
+          :on-error="excelUploadError"
           :on-exceed="handleExceed"
           :on-success="excelUploadSuccess"
-          :on-error="excelUploadError"
-          :accept="parameter.fileType!.join(',')"
+          :show-file-list="true"
+          action="#"
+          class="upload"
         >
           <slot name="empty">
             <el-icon class="el-icon--upload">
@@ -39,11 +39,11 @@
   </el-dialog>
 </template>
 
-<script setup lang="ts" name="ImportExcel">
+<script lang="ts" name="ImportExcel" setup>
 import { ref } from "vue";
 import { useDownload } from "@/hooks/useDownload";
 import { Download } from "@element-plus/icons-vue";
-import { ElNotification, UploadRequestOptions, UploadRawFile } from "element-plus";
+import { ElNotification, UploadRawFile, UploadRequestOptions } from "element-plus";
 
 export interface ExcelParameterProps {
   title: string; // 标题
@@ -145,5 +145,5 @@ defineExpose({
 });
 </script>
 <style lang="scss" scoped>
-@import "./index.scss";
+@use "./index";
 </style>

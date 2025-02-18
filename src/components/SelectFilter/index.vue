@@ -30,7 +30,7 @@
   </div>
 </template>
 
-<script setup lang="ts" name="selectFilter">
+<script lang="ts" name="selectFilter" setup>
 import { ref, watch } from "vue";
 
 interface OptionsProps {
@@ -105,6 +105,6 @@ const select = (item: SelectDataProps, option: OptionsProps) => {
 };
 </script>
 
-<style scoped lang="scss">
-@import "./index.scss";
+<style lang="scss" scoped>
+@use "./index";
 </style>

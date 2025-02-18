@@ -5,11 +5,12 @@
   </div>
 </template>
 
-<script setup lang="ts" name="menu23">
+<script lang="ts" name="menu23" setup>
 import { ref } from "vue";
+
 const value = ref("");
 </script>
 
-<style scoped lang="scss">
-@import "./index.scss";
+<style lang="scss" scoped>
+@use "./index";
 </style>

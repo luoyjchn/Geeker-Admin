@@ -1,10 +1,8 @@
 <template>
   <div class="card content-box">
-    <el-button class="add" type="primary" plain @click="addDomain"> Add Input </el-button>
-    <el-form ref="formRef" :model="dynamicValidateForm" label-width="100px" class="demo-dynamic">
+    <el-button class="add" plain type="primary" @click="addDomain"> Add Input </el-button>
+    <el-form ref="formRef" :model="dynamicValidateForm" class="demo-dynamic" label-width="100px">
       <el-form-item
-        prop="email"
-        label="Email"
         :rules="[
           {
             required: true,
@@ -17,6 +15,8 @@
             trigger: ['blur', 'change']
           }
         ]"
+        label="Email"
+        prop="email"
       >
         <el-input v-model="dynamicValidateForm.email" />
       </el-form-item>
@@ -33,7 +33,7 @@
       >
         <el-input v-model="domain.value">
           <template #append>
-            <el-button type="danger" plain class="mt-2" @click.prevent="removeDomain(domain)"> Delete </el-button>
+            <el-button class="mt-2" plain type="danger" @click.prevent="removeDomain(domain)"> Delete </el-button>
           </template>
         </el-input>
       </el-form-item>
@@ -45,7 +45,7 @@
   </div>
 </template>
 
-<script setup lang="ts" name="dynamicForm">
+<script lang="ts" name="dynamicForm" setup>
 import { reactive, ref } from "vue";
 import type { FormInstance } from "element-plus";
 
@@ -99,6 +99,6 @@ const resetForm = (formEl: FormInstance | undefined) => {
 };
 </script>
 
-<style scoped lang="scss">
-@import "./index.scss";
+<style lang="scss" scoped>
+@use "./index";
 </style>

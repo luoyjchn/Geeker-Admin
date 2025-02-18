@@ -4,7 +4,7 @@
   </div>
 </template>
 
-<script setup lang="ts" name="pieChart">
+<script lang="ts" name="pieChart" setup>
 import { ECOption } from "@/components/ECharts/config";
 import ECharts from "@/components/ECharts/index.vue";
 
@@ -63,6 +63,6 @@ const option: ECOption = {
 };
 </script>
 
-<style scoped lang="scss">
-@import "./index.scss";
+<style lang="scss" scoped>
+@use "./index";
 </style>

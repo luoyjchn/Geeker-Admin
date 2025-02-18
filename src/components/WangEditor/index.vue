@@ -1,21 +1,21 @@
 <template>
   <div :class="['editor-box', self_disabled ? 'editor-disabled' : '']">
-    <Toolbar v-if="!hideToolBar" class="editor-toolbar" :editor="editorRef" :default-config="toolbarConfig" :mode="mode" />
+    <Toolbar v-if="!hideToolBar" :default-config="toolbarConfig" :editor="editorRef" :mode="mode" class="editor-toolbar" />
     <Editor
       v-model="valueHtml"
-      class="editor-content"
-      :style="{ height }"
-      :mode="mode"
       :default-config="editorConfig"
+      :mode="mode"
+      :style="{ height }"
+      class="editor-content"
       @on-created="handleCreated"
       @on-blur="handleBlur"
     />
   </div>
 </template>
 
-<script setup lang="ts" name="WangEditor">
-import { nextTick, computed, inject, shallowRef, onBeforeUnmount } from "vue";
-import { IToolbarConfig, IEditorConfig } from "@wangeditor/editor";
+<script lang="ts" name="WangEditor" setup>
+import { computed, inject, nextTick, onBeforeUnmount, shallowRef } from "vue";
+import { IEditorConfig, IToolbarConfig } from "@wangeditor/editor";
 import { Editor, Toolbar } from "@wangeditor/editor-for-vue";
 import { uploadImg, uploadVideo } from "@/api/modules/upload";
 import "@wangeditor/editor/dist/css/style.css";
@@ -153,6 +153,6 @@ defineExpose({
 });
 </script>
 
-<style scoped lang="scss">
-@import "./index.scss";
+<style lang="scss" scoped>
+@use "./index";
 </style>

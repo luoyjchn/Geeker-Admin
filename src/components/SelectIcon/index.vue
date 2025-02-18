@@ -3,9 +3,9 @@
     <el-input
       ref="inputRef"
       v-model="valueIcon"
-      v-bind="$attrs"
-      :placeholder="placeholder"
       :clearable="clearable"
+      :placeholder="placeholder"
+      v-bind="$attrs"
       @clear="clearIcon"
       @click="openDialog"
     >
@@ -14,7 +14,7 @@
       </template>
     </el-input>
     <el-dialog v-model="dialogVisible" :title="placeholder" top="50px" width="66%">
-      <el-input v-model="inputValue" placeholder="搜索图标" size="large" :prefix-icon="Icons.Search" />
+      <el-input v-model="inputValue" :prefix-icon="Icons.Search" placeholder="搜索图标" size="large" />
       <el-scrollbar v-if="Object.keys(iconsList).length">
         <div class="icon-list">
           <div v-for="item in iconsList" :key="item" class="icon-item" @click="selectIcon(item)">
@@ -28,8 +28,8 @@
   </div>
 </template>
 
-<script setup lang="ts" name="SelectIcon">
-import { ref, computed } from "vue";
+<script lang="ts" name="SelectIcon" setup>
+import { computed, ref } from "vue";
 import * as Icons from "@element-plus/icons-vue";
 
 interface SelectIconProps {
@@ -85,6 +85,6 @@ const iconsList = computed((): { [key: string]: any } => {
 });
 </script>
 
-<style scoped lang="scss">
-@import "./index.scss";
+<style lang="scss" scoped>
+@use "./index";
 </style>

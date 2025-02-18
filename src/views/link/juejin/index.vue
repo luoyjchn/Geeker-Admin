@@ -8,8 +8,8 @@
   </div>
 </template>
 
-<script setup lang="ts" name="juejin"></script>
+<script lang="ts" name="juejin" setup></script>
 
-<style scoped lang="scss">
-@import "./index.scss";
+<style lang="scss" scoped>
+@use "./index";
 </style>

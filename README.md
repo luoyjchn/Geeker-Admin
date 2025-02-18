@@ -167,7 +167,7 @@ Geeker-Admin
 ├─ commitlint.config.cjs   # git 提交规范配置
 ├─ index.html              # 入口 html
 ├─ LICENSE                 # 开源协议文件
-├─ lint-staged.config.cjs  # lint-staged 配置文件
+├─ lint-staged.config.js  # lint-staged 配置文件
 ├─ package-lock.json       # 依赖包包版本锁
 ├─ package.json            # 依赖包管理
 ├─ postcss.config.cjs      # postcss 配置

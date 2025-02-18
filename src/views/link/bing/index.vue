@@ -1,11 +1,11 @@
 <template>
   <div class="card content-box">
-    <iframe src="https://cn.bing.com/" frameborder="0" class="full-iframe"></iframe>
+    <iframe class="full-iframe" frameborder="0" src="https://cn.bing.com/"></iframe>
   </div>
 </template>
 
-<script setup lang="ts" name="bing"></script>
+<script lang="ts" name="bing" setup></script>
 
-<style scoped lang="scss">
-@import "./index.scss";
+<style lang="scss" scoped>
+@use "./index";
 </style>

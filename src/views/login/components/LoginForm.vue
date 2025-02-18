@@ -10,7 +10,7 @@
       </el-input>
     </el-form-item>
     <el-form-item prop="password">
-      <el-input v-model="loginForm.password" type="password" placeholder="密码：123456" show-password autocomplete="new-password">
+      <el-input v-model="loginForm.password" autocomplete="new-password" placeholder="密码：123456" show-password type="password">
         <template #prefix>
           <el-icon class="el-input__icon">
             <lock />
@@ -21,18 +21,19 @@
   </el-form>
   <div class="login-btn">
     <el-button :icon="CircleClose" round size="large" @click="resetForm(loginFormRef)"> 重置 </el-button>
-    <el-button :icon="UserFilled" round size="large" type="primary" :loading="loading" @click="login(loginFormRef)">
+    <el-button :icon="UserFilled" :loading="loading" round size="large" type="primary" @click="login(loginFormRef)">
       登录
     </el-button>
   </div>
 </template>
 
-<script setup lang="ts">
-import { ref, reactive, onMounted, onBeforeUnmount } from "vue";
+<script lang="ts" setup>
+import { onBeforeUnmount, onMounted, reactive, ref } from "vue";
 import { useRouter } from "vue-router";
 import { HOME_URL } from "@/config";
 // import { getTimeState } from "@/utils";
 import { Login } from "@/api/interface";
+import type { ElForm } from "element-plus";
 import { ElNotification } from "element-plus";
 import { loginApi } from "@/api/modules/login";
 import { useUserStore } from "@/stores/modules/user";
@@ -40,7 +41,6 @@ import { useTabsStore } from "@/stores/modules/tabs";
 import { useKeepAliveStore } from "@/stores/modules/keepAlive";
 import { initDynamicRouter } from "@/routers/modules/dynamicRouter";
 import { CircleClose, UserFilled } from "@element-plus/icons-vue";
-import type { ElForm } from "element-plus";
 import md5 from "md5";
 
 const router = useRouter();
@@ -121,6 +121,6 @@ onBeforeUnmount(() => {
 });
 </script>
 
-<style scoped lang="scss">
-@import "../index.scss";
+<style lang="scss" scoped>
+@use "../index";
 </style>

@@ -1,12 +1,12 @@
 <template>
-  <el-drawer v-model="drawerVisible" title="布局设置" size="290px">
+  <el-drawer v-model="drawerVisible" size="290px" title="布局设置">
     <!-- 布局样式 -->
     <el-divider class="divider" content-position="center">
       <el-icon><Notification /></el-icon>
       布局样式
     </el-divider>
     <div class="layout-box">
-      <el-tooltip effect="dark" content="纵向" placement="top" :show-after="200">
+      <el-tooltip :show-after="200" content="纵向" effect="dark" placement="top">
         <div :class="['layout-item layout-vertical', { 'is-active': layout == 'vertical' }]" @click="setLayout('vertical')">
           <div class="layout-dark"></div>
           <div class="layout-container">
@@ -18,7 +18,7 @@
           </el-icon>
         </div>
       </el-tooltip>
-      <el-tooltip effect="dark" content="经典" placement="top" :show-after="200">
+      <el-tooltip :show-after="200" content="经典" effect="dark" placement="top">
         <div :class="['layout-item layout-classic', { 'is-active': layout == 'classic' }]" @click="setLayout('classic')">
           <div class="layout-dark"></div>
           <div class="layout-container">
@@ -30,7 +30,7 @@
           </el-icon>
         </div>
       </el-tooltip>
-      <el-tooltip effect="dark" content="横向" placement="top" :show-after="200">
+      <el-tooltip :show-after="200" content="横向" effect="dark" placement="top">
         <div :class="['layout-item layout-transverse', { 'is-active': layout == 'transverse' }]" @click="setLayout('transverse')">
           <div class="layout-dark"></div>
           <div class="layout-content"></div>
@@ -39,7 +39,7 @@
           </el-icon>
         </div>
       </el-tooltip>
-      <el-tooltip effect="dark" content="分栏" placement="top" :show-after="200">
+      <el-tooltip :show-after="200" content="分栏" effect="dark" placement="top">
         <div :class="['layout-item layout-columns', { 'is-active': layout == 'columns' }]" @click="setLayout('columns')">
           <div class="layout-dark"></div>
           <div class="layout-light"></div>
@@ -53,7 +53,7 @@
     <div class="theme-item">
       <span>
         侧边栏反转色
-        <el-tooltip effect="dark" content="侧边栏颜色变为深色模式" placement="top">
+        <el-tooltip content="侧边栏颜色变为深色模式" effect="dark" placement="top">
           <el-icon><QuestionFilled /></el-icon>
         </el-tooltip>
       </span>
@@ -62,7 +62,7 @@
     <div class="theme-item mb50">
       <span>
         头部反转色
-        <el-tooltip effect="dark" content="头部颜色变为深色模式" placement="top">
+        <el-tooltip content="头部颜色变为深色模式" effect="dark" placement="top">
           <el-icon><QuestionFilled /></el-icon>
         </el-tooltip>
       </span>
@@ -131,7 +131,7 @@
   </el-drawer>
 </template>
 
-<script setup lang="ts">
+<script lang="ts" setup>
 import { ref } from "vue";
 import { storeToRefs } from "pinia";
 import { useTheme } from "@/hooks/useTheme";
@@ -186,6 +186,6 @@ const drawerVisible = ref(false);
 mittBus.on("openThemeDrawer", () => (drawerVisible.value = true));
 </script>
 
-<style scoped lang="scss">
-@import "./index.scss";
+<style lang="scss" scoped>
+@use "./index";
 </style>

@@ -4,7 +4,7 @@
   </div>
 </template>
 
-<script setup lang="ts" name="waterChart">
+<script lang="ts" name="waterChart" setup>
 import echarts, { ECOption } from "@/components/ECharts/config";
 import ECharts from "@/components/ECharts/index.vue";
 
@@ -293,6 +293,6 @@ const option = {
 } as ECOption;
 </script>
 
-<style scoped lang="scss">
-@import "./index.scss";
+<style lang="scss" scoped>
+@use "./index";
 </style>
