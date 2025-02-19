@@ -170,7 +170,7 @@ Geeker-Admin
 ├─ lint-staged.config.js  # lint-staged 配置文件
 ├─ package-lock.json       # 依赖包包版本锁
 ├─ package.json            # 依赖包管理
-├─ postcss.config.cjs      # postcss 配置
+├─ postcss.config.js      # postcss 配置
 ├─ README.md               # README 介绍
 ├─ tsconfig.json           # typescript 全局配置
 └─ vite.config.ts          # vite 全局配置文件
