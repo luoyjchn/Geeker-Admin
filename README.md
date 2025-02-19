@@ -164,7 +164,7 @@ Geeker-Admin
 ├─ .stylelintignore        # 忽略 stylelint 格式化
 ├─ .stylelintrc.cjs        # stylelint 样式格式化配置
 ├─ CHANGELOG.md            # 项目更新日志
-├─ commitlint.config.ts   # git 提交规范配置
+├─ commitlint.config.cjs   # git 提交规范配置
 ├─ index.html              # 入口 html
 ├─ LICENSE                 # 开源协议文件
 ├─ lint-staged.config.js  # lint-staged 配置文件

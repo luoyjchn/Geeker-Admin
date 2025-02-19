@@ -36,9 +36,7 @@
     "build/**/*.ts",
     "build/**/*.d.ts",
     "vite.config.ts",
-    "src/vite-env.d.ts",
-    "commitlint.config.ts",
-    "postcss.config.js"
+    "src/vite-env.d.ts"
   ],
   "exclude": ["node_modules", "dist", "**/*.js"]
 }
