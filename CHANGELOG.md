@@ -2,13 +2,52 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-## [1.2.0](https://github.com/HalseySpicy/Geeker-Admin/compare/v1.1.0...v1.2.0) (2023-09-15)
-
+## [1.3.0](https://github.com/HalseySpicy/Geeker-Admin/compare/v1.2.0...v1.3.0) (2025-02-21)
 
 ### Features
 
-* 🚀 update and optimize project content ([17bc017](https://github.com/HalseySpicy/Geeker-Admin/commit/17bc017c5abbd2c87813d6c6f9d587ddf9d57da7))
-* 🚀 upgrade plugins and add tab functionality ([f21a41d](https://github.com/HalseySpicy/Geeker-Admin/commit/f21a41d8df44efe5216dec39bf4abf0ea86a7781))
+- 🚀 add codeInspectorPlugin to locate source code plugins ([9ed20f2](https://github.com/HalseySpicy/Geeker-Admin/commit/9ed20f22d9d58478b3687cd792e8194af1eeda83))
+- 🚀 add nextDevTools configuration ([58bfe44](https://github.com/HalseySpicy/Geeker-Admin/commit/58bfe44a42ff58bc7342dc287b3317d73cda208e))
+- 🚀 refactoring menu search components ([cb4e8b0](https://github.com/HalseySpicy/Geeker-Admin/commit/cb4e8b0d597ee73db4543338225d30238a77c7ca))
+- 🚀 solve the problem of keepAlive on the details page ([f1068dd](https://github.com/HalseySpicy/Geeker-Admin/commit/f1068dd8729490fa6bb7487a6c255f2d755c8041))
+- 🚀 upgrade NPM plugin package ([8f22da0](https://github.com/HalseySpicy/Geeker-Admin/commit/8f22da0a9b5a8bf6af43b8b63b45e28e9ea325c2))
+- 🚀 upgrade NPM plugin package ([45b5043](https://github.com/HalseySpicy/Geeker-Admin/commit/45b5043f949d4a8c55d16ec89fad0ed5764abf30))
+- 🚀 upgrade NPM plugin package ([3be3b3b](https://github.com/HalseySpicy/Geeker-Admin/commit/3be3b3b9e272f8675799d92b4eb2eb3cbf4a42a2))
+- 🚀 upgrade NPM plugin package ([3876497](https://github.com/HalseySpicy/Geeker-Admin/commit/3876497cdf842790bc41ea99f250a9db31582cf1))
+- 🚀 upgrade NPM plugin package ([af9d18e](https://github.com/HalseySpicy/Geeker-Admin/commit/af9d18e44c97c6bae22e96a907e45314e45843cd))
+- 🚀 upgrade NPM plugin package & modifying bugs ([7e07e0d](https://github.com/HalseySpicy/Geeker-Admin/commit/7e07e0df3494f99d2113d47b5e4bcb86b9bfbd93))
+- **component:** 🚀 add treeFilter component to expand and collapse ([db66a6b](https://github.com/HalseySpicy/Geeker-Admin/commit/db66a6bea2860a2ceee583c141d76e33679f5a25))
+- searchFormItem搜索组件时间区间添加placeholder和rangeSeparator的定制 ([9c13297](https://github.com/HalseySpicy/Geeker-Admin/commit/9c132977aa044ad29af9018a232ef2f3697e7c4f))
+
+### Bug Fixes
+
+- 🧩 解决config取消按钮控制台错误 ([d3bf95d](https://github.com/HalseySpicy/Geeker-Admin/commit/d3bf95d4c1f23cadf074d14fd3a6b07d66a6cd13))
+- 🧩 修复复制指令在复制不被支持或者操作下仍提示显示成功的消息 ([e346c23](https://github.com/HalseySpicy/Geeker-Admin/commit/e346c235630eee5b7c0197dbc88392ebe055bf45))
+- 🧩 修复echarts切换全屏后变小 ([fc84fde](https://github.com/HalseySpicy/Geeker-Admin/commit/fc84fdedc4b47fc6556e5c6d3ccf75e1c1234a70))
+- 🧩 修复notification、message组件被overlay层覆盖问题 Close [#466](https://github.com/HalseySpicy/Geeker-Admin/issues/466) ([8b8d3a4](https://github.com/HalseySpicy/Geeker-Admin/commit/8b8d3a40ef59909f90e296628131d7b5ffa32aec))
+- 🧩 fix \_children column prop option is required ([db1e023](https://github.com/HalseySpicy/Geeker-Admin/commit/db1e023db4f1be05fe9c0d23503a7dbe5b914c8e))
+- 🧩 fix breadcrumb icon style and message level issues ([c610755](https://github.com/HalseySpicy/Geeker-Admin/commit/c6107557ffc0445e9bf3a34229d2a830a5040d67))
+- 🧩 fix packaging failure ([dd9d2cb](https://github.com/HalseySpicy/Geeker-Admin/commit/dd9d2cbebe06a1dc780f53e9320d3546ca80d2ca))
+- 🧩 fix ts type error ([3e46053](https://github.com/HalseySpicy/Geeker-Admin/commit/3e460534f206b479eb497769f9f0c7d912c7bb84))
+- 🧩 keepAlive logic error when modifying and refreshing the page ([5d8479c](https://github.com/HalseySpicy/Geeker-Admin/commit/5d8479c9f5a124515c33e00c4e3d4d2b2d2ca88d))
+- 🧩修改错别字 ([b13d41c](https://github.com/HalseySpicy/Geeker-Admin/commit/b13d41cab69f537d2ac57d87af7a7410320f1453))
+- 登录页面卸载前，未移除 enter 事件监听 ([37fd5c5](https://github.com/HalseySpicy/Geeker-Admin/commit/37fd5c54909be8bd4e331fe5e0b5af5013f42bbb))
+- 修复页面在包含ProTable组建的页面时，首次修改组件大小报错 ([72de0d4](https://github.com/HalseySpicy/Geeker-Admin/commit/72de0d463d25141f64b79c68d58ac758892e2cb9))
+- **api:** 🧩 fix axiosCancel bug ([5dcd327](https://github.com/HalseySpicy/Geeker-Admin/commit/5dcd32784625d15be33d4a96b7e565aeb63fea04))
+- **component:** 🧩 修复类型 ([2ac3682](https://github.com/HalseySpicy/Geeker-Admin/commit/2ac368235baa76f11befa03269138cbab5d0bfdc))
+- **component:** 🧩 fix proTable search sorting bug ([af07aaf](https://github.com/HalseySpicy/Geeker-Admin/commit/af07aaff572ef464e5bb0689908677fe0de0976c))
+- **component:** 🧩 fix textarea and rich text could not wrap by Enter ([ea3a441](https://github.com/HalseySpicy/Geeker-Admin/commit/ea3a441c13b22e61fa95264a299ab61de29a61de))
+- **directive:** 🧩 removeEventListener parameter is wrong ([f08a125](https://github.com/HalseySpicy/Geeker-Admin/commit/f08a1256b35717a253ebb28c690b9b1c06352fc1))
+- protable未使用分页组件，截取了前10条数据的bug ([38c4bf5](https://github.com/HalseySpicy/Geeker-Admin/commit/38c4bf5e9fc34fb275071781cecf1c5cdcccde24))
+- **store:** 🧩 fix keepalive logic error when closing single tabs ([9011dab](https://github.com/HalseySpicy/Geeker-Admin/commit/9011dab4858d654b81a4ea35cabc9b8b37bdb9ef))
+- **view:** 🧩 fix `el-radio` and `el-check`, label as a value has been deprecated ([8ccfa71](https://github.com/HalseySpicy/Geeker-Admin/commit/8ccfa7135bf37d772c04cf814b244c525ff59309))
+
+## [1.2.0](https://github.com/HalseySpicy/Geeker-Admin/compare/v1.1.0...v1.2.0) (2023-09-15)
+
+### Features
+
+- 🚀 update and optimize project content ([17bc017](https://github.com/HalseySpicy/Geeker-Admin/commit/17bc017c5abbd2c87813d6c6f9d587ddf9d57da7))
+- 🚀 upgrade plugins and add tab functionality ([f21a41d](https://github.com/HalseySpicy/Geeker-Admin/commit/f21a41d8df44efe5216dec39bf4abf0ea86a7781))
 
 ## [1.1.0](https://github.com/HalseySpicy/Geeker-Admin/compare/v1.0.0...v1.1.0) (2023-07-09)
 
