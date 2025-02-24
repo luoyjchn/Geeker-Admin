@@ -65,5 +65,13 @@ export default defineConfigWithVueTs(
       "vue/multi-word-component-names": "off", // 要求组件名称始终为 “-” 链接的单词
       "vue/no-setup-props-destructure": "off" // 禁止解构 props 传递给 setup
     }
+  },
+
+  {
+    name: "app/user-node-rules",
+    files: [["**/*.{js,cjs}"]],
+    rules: {
+      "@typescript-eslint/no-require-imports": "off"
+    }
   }
 );
