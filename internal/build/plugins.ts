@@ -6,6 +6,8 @@ import { visualizer } from "rollup-plugin-visualizer";
 import { createSvgIconsPlugin } from "vite-plugin-svg-icons";
 import vue from "@vitejs/plugin-vue";
 import vueJsx from "@vitejs/plugin-vue-jsx";
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-expect-error
 import eslintPlugin from "vite-plugin-eslint";
 import viteCompression from "vite-plugin-compression";
 import vueSetupExtend from "unplugin-vue-setup-extend-plus/vite";

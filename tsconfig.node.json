@@ -1,11 +1,6 @@
 {
   "extends": "@tsconfig/node18/tsconfig.json",
-  "include": [
-    "build/**/*.ts",
-    "build/**/*.d.ts",
-    "vite.config.ts",
-    "src/vite-env.d.ts"
-  ],
+  "include": ["vite-env.d.ts", "plopfile.ts", "internal", "internal/**/*.ts", "internal/**/*.d.ts", "vite.config.ts"],
   "compilerOptions": {
     "noEmit": true,
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo",
