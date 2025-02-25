@@ -2,7 +2,7 @@
   "extends": "@vue/tsconfig/tsconfig.dom.json",
   "compilerOptions": {
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
-    "types": ["vue", "element-plus/global"],
+    "types": ["node", "vue", "element-plus/global"],
     /* Raise error on expressions and declarations with an implied 'any' type. */
     "noImplicitAny": false,
     // "strictNullChecks": true,              /* Enable strict null checks. */
@@ -13,19 +13,14 @@
     // "alwaysStrict": true,                  /* Parse in strict mode and emit "use strict" for each source file. */
 
     "isolatedModules": true,
+    "verbatimModuleSyntax": false,
     "baseUrl": "./",
     "paths": {
       "@": ["src"],
       "@/*": ["src/*"]
     }
   },
-  "include": [
-    "src/**/*.ts",
-    "src/**/*.d.ts",
-    "src/**/*.tsx",
-    "src/**/*.vue",
-    "src/vite-env.d.ts"
-  ],
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue", "src/vite-env.d.ts"],
   "exclude": ["node_modules", "dist", "**/*.js"],
   "references": [
     {

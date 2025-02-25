@@ -86,7 +86,7 @@ devDependencies:
     specifier: ^2.3.5
     version: 2.3.5
   '@types/node':
-    specifier: '18'
+    specifier: ^18.19.76
     version: 18.19.76
   '@types/nprogress':
     specifier: ^0.2.3
