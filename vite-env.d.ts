@@ -10,3 +10,5 @@ declare const __APP_INFO__: {
   };
   lastBuildTime: string;
 };
+
+declare const APP_ID: string;
