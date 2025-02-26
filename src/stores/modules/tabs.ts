@@ -2,13 +2,19 @@ import router from "@/routers";
 import { defineStore } from "pinia";
 import { getUrlWithParams } from "@/utils";
 import { useKeepAliveStore } from "./keepAlive";
-import { TabsState, TabsMenuProps } from "@/stores/interface";
+import { TabsMenuProps, TabsState } from "@/stores/interface";
 import piniaPersistConfig from "@/stores/helper/persist";
+import { getStoreId } from "@/stores/utils";
 
 const keepAliveStore = useKeepAliveStore();
 
+/**
+ * tabs store id
+ */
+const TABS_STORE_ID = getStoreId("tabs");
+
 export const useTabsStore = defineStore({
-  id: "geeker-tabs",
+  id: TABS_STORE_ID,
   state: (): TabsState => ({
     tabsMenuList: []
   }),
@@ -72,5 +78,5 @@ export const useTabsStore = defineStore({
       });
     }
   },
-  persist: piniaPersistConfig("geeker-tabs")
+  persist: piniaPersistConfig(TABS_STORE_ID)
 });

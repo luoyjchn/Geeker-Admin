@@ -1,0 +1,1 @@
+export const getStoreId = (key: string | number) => [APP_ID, key].join("-");

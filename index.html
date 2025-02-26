@@ -2,8 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vue.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/vue.svg" rel="icon" type="image/svg+xml" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title><%- title %></title>
   </head>
   <body>
@@ -92,7 +92,8 @@
       </div>
     </div>
     <script>
-      const globalState = JSON.parse(window.localStorage.getItem("geeker-global"));
+      const appId = "<%- appId %>";
+      const globalState = JSON.parse(window.localStorage.getItem(`${appId}-global`));
       if (globalState) {
         const dot = document.querySelectorAll(".dot i");
         const html = document.querySelector("html");
@@ -100,6 +101,6 @@
         if (globalState.isDark) html.style.background = "#141414";
       }
     </script>
-    <script type="module" src="/src/main.ts"></script>
+    <script src="/src/main.ts" type="module"></script>
   </body>
 </html>

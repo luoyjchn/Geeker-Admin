@@ -26,7 +26,8 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
       }
     },
     define: {
-      __APP_INFO__: JSON.stringify(__APP_INFO__)
+      __APP_INFO__: JSON.stringify(__APP_INFO__),
+      APP_ID: JSON.stringify(viteEnv.VITE_APP_ID)
     },
     css: {
       preprocessorOptions: {

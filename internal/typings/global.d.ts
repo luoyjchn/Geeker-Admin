@@ -17,6 +17,7 @@ declare interface ViteEnv {
   VITE_API_URL: string;
   VITE_PROXY: [string, string][];
   VITE_CODEINSPECTOR: boolean;
+  VITE_APP_ID: string;
 }
 
 interface ImportMetaEnv extends ViteEnv {

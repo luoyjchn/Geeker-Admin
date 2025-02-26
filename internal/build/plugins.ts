@@ -19,7 +19,7 @@ import { codeInspectorPlugin } from "code-inspector-plugin";
  * @param viteEnv
  */
 export const createVitePlugins = (viteEnv: ViteEnv): (PluginOption | PluginOption[])[] => {
-  const { VITE_GLOB_APP_TITLE, VITE_REPORT, VITE_DEVTOOLS, VITE_PWA, VITE_CODEINSPECTOR } = viteEnv;
+  const { VITE_GLOB_APP_TITLE, VITE_APP_ID, VITE_REPORT, VITE_DEVTOOLS, VITE_PWA, VITE_CODEINSPECTOR } = viteEnv;
   return [
     vue(),
     // vue 可以使用 jsx/tsx 语法
@@ -36,7 +36,7 @@ export const createVitePlugins = (viteEnv: ViteEnv): (PluginOption | PluginOptio
     createHtmlPlugin({
       minify: true,
       inject: {
-        data: { title: VITE_GLOB_APP_TITLE }
+        data: { title: VITE_GLOB_APP_TITLE, appId: VITE_APP_ID }
       }
     }),
     // 使用 svg 图标
