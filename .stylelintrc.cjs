@@ -34,6 +34,14 @@ module.exports = {
       {
         ignorePseudoClasses: ["global", "v-deep", "deep"]
       }
+    ],
+    "declaration-property-value-no-unknown": [
+      true,
+      {
+        ignoreProperties: {
+          "/.+/": "/v-bind\(.+\)/"
+        }
+      }
     ]
   },
   ignoreFiles: ["**/*.js", "**/*.jsx", "**/*.tsx", "**/*.ts"]
